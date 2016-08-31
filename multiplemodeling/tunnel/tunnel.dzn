@@ -1,0 +1,12 @@
+PIVOT = {P1,P2,P3,P4,P5,P6,P7,P8,P9};
+first = P5;
+coord = [0, 3, 7, 10, 16, 18, 21, 25, 28];  % coordinates of cities (to compute distance)
+
+m = 4; % number of precedence constraints
+%prev = [P6, P4, P5, P3];
+%post = [P2, P7, P6, P5];
+prev = [P6, P4, P8, P3];
+post = [P2, P7, P6, P8];
+%prev = [P6, P7, P6, P5];
+%post = [P2, P4, P5, P3];
+% preceduence city pairs

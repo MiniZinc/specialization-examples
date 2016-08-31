@@ -1,0 +1,4 @@
+nMoves = 5;
+timeBound = 10;
+power = [6, 8, 5, 3, 4];
+duration = [4, 5, 3, 2, 3];

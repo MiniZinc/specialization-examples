@@ -1,0 +1,4 @@
+DISH = {SNAKESOUP, GONGBAOFROGS, MAPOTOFU};
+capacity = 18;
+satisf = [29,19,8];
+size = [8,5,3];

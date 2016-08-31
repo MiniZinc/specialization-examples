@@ -1,0 +1,6 @@
+nsoldier = 6;
+height = [7,6,9,6,4,8];
+strawheight = 6;
+
+maxr = 3;
+maxc = 3;

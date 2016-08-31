@@ -1,0 +1,10 @@
+n = 6;
+m = 3;
+
+TRIBUTE = {LETTUCE, TURNIP, CARROT, % rank 1
+   BANANA, PEACH, GRAPE,            % rank 2
+   SNAKE, CHICKEN, FISHHEAD,        % rank 3
+   RICEWINE, GAOLIANG, GRAPEWINE,   % rank 4
+   GOLD, SILVER, BRONZE,            % rank 5
+   GREEN, RED, BLUE                 % rank 6
+};
