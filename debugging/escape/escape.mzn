@@ -10,7 +10,7 @@ int: rest; % resting every rest junctions
 
 int: maxstep;
 set of int: STEP = 1..maxstep;
-var int: step;
+var STEP: step;
 array[STEP] of var NODE: path;
 
 include "table.mzn";
