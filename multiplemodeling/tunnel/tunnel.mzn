@@ -8,10 +8,10 @@ array[PIVOT] of int: coord;
 
 int: m;
 set of int: PREC = 1..m;
-array[PREC] of int: prev;
-array[PREC] of int: post;
+array[PREC] of PIVOT: prev;
+array[PREC] of PIVOT: post;
 
-array[PIVOT] of var POS: order; % records visting order of cities
+array[PIVOT] of var POS: order; % records visiting order of cities
 array[POS] of var PIVOT: route; % records the city visited at each step
 
 constraint route[1] = first;

@@ -52,7 +52,7 @@ constraint tribute[1,1] < tribute[m,1];
 % variable symmetry using channeling
 set of int: PVERTEX = 1..n*m;
 
-array[TRIBUTE] of var PVERTEX: position;
+array[1..length(TRIBUTE)] of var PVERTEX: position;
 
 
 constraint inverse(array1d(tribute), position);

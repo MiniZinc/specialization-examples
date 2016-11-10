@@ -1,7 +1,7 @@
 % Patrol Scheduling
 
 enum SOLDIER;
-enum SHIFT;
+enum SHIFT = {OFF, EVE, NIGHT};
 
 int: nDays; % length of the period
 set of int: DAY = 1..nDays;

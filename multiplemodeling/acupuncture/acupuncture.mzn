@@ -1,7 +1,16 @@
 include "globals.mzn";
 
-enum SPOT;
-% array[SPOT] of int: order;
+enum SPOT = {DAZHUI, TAODAOO, SHENZHU, LINGTAI, ZHIYANG, ZHONGSHU, JIZHONG, XUANSHU, YAOYANGGUAN, YAOYU};
+%大椎 dazhui
+%陶道 taodao
+%身柱 shenzhu
+%灵台 lingtai
+%至阳 zhiyang
+%中枢 zhongshu
+%脊中 jizhong
+%悬枢 xuanshu
+%腰阳关 yaoyangguan
+%腰俞 yaoyu
 
 int: c;
 int: m;

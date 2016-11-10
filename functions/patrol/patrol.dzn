@@ -1,5 +1,4 @@
 SOLDIER = {S1,S2,S3,S4,S5,S6};
-SHIFT = {OFF, EVE, NIGHT};
 nDays = 8;
 o = 3;
 l = 1;

@@ -1,5 +1,5 @@
 enum SOLDIER;
-enum SHIFT;
+enum SHIFT = { OFF, EVE, NIGHT };
 
 int: nDays; 
 set of int: DAY = 1..nDays;
