@@ -18,7 +18,7 @@ include "global_cardinality.mzn";
 constraint global_cardinality(size, [i | i in SQUARE], ncopy);
 constraint forall(i in 1..nsq-1)(size[i] <= size[i+1]);
 % calculate size of each square 
-%size = [ max(j in SQUARE)(j*(i > base[j])) | i in NSQ];
+%array[NSQ] of SQUARE: size = [ max(j in SQUARE)(j*(i > base[j])) | i in NSQ];
 
 % squares fit in the rectangle
 constraint forall(s in NSQ)(x[s] + size[s] <= width);

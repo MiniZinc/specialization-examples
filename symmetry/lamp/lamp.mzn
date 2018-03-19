@@ -7,6 +7,7 @@ int: k;
 int: lambda;
 
 array[ROW,COL] of var bool: m;
+%solve :: int_search([m[r,c] | r in ROW, c in COL], input_order, indomain_min, complete) satisfy;
 solve satisfy;
 
 constraint forall(i in ROW)(sum(j in COL)(m[i,j]) = r);
