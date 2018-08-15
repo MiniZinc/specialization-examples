@@ -27,8 +27,12 @@ constraint disjunctive(start, duration);
 array[int] of var TIME: weekday = [ start[t] | t in PERSON where on_weekend[t] = false ];
 array[int] of int: weekdur = [ duration[t] | t in PERSON where on_weekend[t] = false ];
 
-array[int] of TIME: weekends = [ t | t in TIME where (t + starting_day) mod 7 = 5 ]; 
-array[int] of int: weekend_dur = [ 2 | t in TIME where (t + starting_day) mod 7 = 5 ];
+array[int] of TIME: weekends =
+	      if starting_day = 6 then [ 1 ] else [] endif ++
+	      [ t | t in TIME where (t + starting_day) mod 7 = 5 ]; 
+array[int] of int: weekend_dur =
+              if starting_day = 6 then [ 1 ] else [] endif ++
+	      [ 2 | t in TIME where (t + starting_day) mod 7 = 5 ];
 
 constraint disjunctive(weekday ++ weekends, weekdur ++ weekend_dur );
 
