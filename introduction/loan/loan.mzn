@@ -1,5 +1,6 @@
 % variables
-var float: R;        % quarterly repayment
+var 0..10000.0: R;        % quarterly repayment
+%var float: R;
 var float: P;        % principal initially borrowed
 var 0.0 .. 2.0: I;  % interest rate
 

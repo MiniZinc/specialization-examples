@@ -16,7 +16,7 @@ constraint let {array [1..nPts] of var 1..size*size: points =
 
 % diggable spots
 %constraint forall(i in 1..nPts)(not((ptR[i] mod 2) = 0 /\ (ptC[i] mod 2) = 0));
-constraint forall(i in 1..nPts)((ptR[i] mod 2) = 1 \/ (ptR[i] mod 2) = 1);
+constraint forall(i in 1..nPts)((ptR[i] mod 2) = 1 \/ (ptC[i] mod 2) = 1);
 
 % all cells covered
 predicate covered(var int: x, var int: y) = 
