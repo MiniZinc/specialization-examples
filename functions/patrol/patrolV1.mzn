@@ -20,4 +20,5 @@ constraint forall(d in DAY)(sum (s in SOLDIER)((roster[s,d] = EVE)) <= u);
 var int: tOnEve = sum(d in DAY)(sum(s in SOLDIER)(roster[s,d] = EVE));
 solve maximize (tOnEve);
 
-output ["Soldier "++show(s)++" on Day "++show(d)++" takes the "++show(roster[s,d])++" shift\n" ++ if s == max(SOLDIER) then "\n" else "" endif | d in DAY, s in SOLDIER]++[show(tOnEve)];
+output ["Soldier \(s) on Day \(d) takes the \(roster[s,d]) shift\n"
+        ++ if s == max(SOLDIER) then "\n" else "" endif | d in DAY, s in SOLDIER]++[show(tOnEve)];
