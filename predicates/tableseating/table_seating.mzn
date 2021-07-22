@@ -42,7 +42,7 @@ constraint forall(p1,p2 in SCHOLAR where p1 < p2 /\ reputation[p1] = 10 /\ reput
 var int: obj1;
 constraint obj1 = sum(t in TABLE)(card(table[t]) != 0);
 
-% Secondary objective: keep the sum of the reputation spread of each table small
+% Secondary objective: minimize the difference in reputation over all tables
 var int: obj2;
 constraint obj2 = sum(t in TABLE)
    (let {var int: minRep = min([reputation[p]*(p in table[t]) +  maxreputation*(1-(p in table[t])) | p in SCHOLAR]); 
