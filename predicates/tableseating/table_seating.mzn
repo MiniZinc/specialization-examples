@@ -2,9 +2,9 @@ enum SCHOLAR;
 array[SCHOLAR] of int: reputation;
 int: maxreputation = max(reputation);
 
-int: T;
+int: T; % number of tables
 set of int: TABLE = 1..T;
-int: S; % tables size
+int: S; % common table size
 array[int,1..2] of SCHOLAR: enemies;
 array[int,1..2] of SCHOLAR: friends;
 
@@ -37,10 +37,6 @@ constraint forall(c in index_set_1of2(friends))
 % Important persons (reputation 10) not on same table
 constraint forall(p1,p2 in SCHOLAR where p1 < p2 /\ reputation[p1] = 10 /\ reputation[p2] = 10)
    (not_same_table(p1,p2));
-
-% An arbitrary de-symmetrizer based on the integer label of a scholar
-constraint forall(t1, t2 in TABLE where t1 < t2)
-   (sum([p*(p in table[t1]) | p in SCHOLAR]) >= sum([p*(p in table[t2]) | p in SCHOLAR]));
 
 % Primary objective: use as few tables as possible
 var int: obj1;
