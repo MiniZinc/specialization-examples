@@ -15,7 +15,7 @@ constraint forall(i in PREC)
 %)
 ;
 
-var 0..t: makespan = max(t in TASK)(start[t] + duration[t]);
+var 0..t: makespan = max(task in TASK)(start[task] + duration[task]);
 solve minimize makespan;
 
 output [show(makespan)," = ", show(start)];
