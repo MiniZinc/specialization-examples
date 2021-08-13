@@ -1,17 +1,20 @@
-int: n; % number of rooms
+% This model uses the geost global constraint but 
+% runs on the orginal 'sbprotate.dzn' data. 
+
+int: n; % number of blocks
 set of int: BLOCK = 1..n;
 int: m; % number of rectangle/offsets
 set of int: ROFF = 1..m;
 array[ROFF,1..4] of int: d; % defns
 set of int: ROT = 1..4;
 array[BLOCK,ROT] of set of ROFF: shape;
-int: h; % height of roll
-int: maxl; % maximum length of roll
+int: h; % width of river
+int: maxl; % maximum length of river
 
 array[BLOCK] of var 0..maxl: x;
 array[BLOCK] of var 0..h: y;
 
-var 0..maxl: l; % length of carpet used
+var 0..maxl: l; % length of river used
 
 solve minimize l;
 
