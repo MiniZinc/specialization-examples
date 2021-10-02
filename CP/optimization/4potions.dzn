@@ -1,10 +1,10 @@
 % Input for "The Strongest YaoCao", 4 potions
 
-n = 4;         % Number of potions
-w = 2;         % Window size
-p = 8;         % Min number of leaves-on-branches required in a window (actual value must be >= p)
-capacity = 19; % Max capacity of nutrients available for any path from root node to outermost node
-m = 4;         % Max number of segments grown at each node (max branching factor)
+n = 4;          % Number of potions
+w = 2;          % Window size
+p = 8;          % Min number of "leaves on all segments in a window" (actual value must be >= p)
+capacity = 19;  % Max capacity of nutrients available for any branch (i.e. path) from root node to outermost node
+m = 4;          % Max number of segments grown at each node (i.e. max branching factor)
 
 nutrient = 
 [|4,2,3,7
