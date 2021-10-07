@@ -47,16 +47,26 @@ array[1..7,TASTE] of 0..7: d =
 
 
 % a warm dish between any hot dish and later cold dish
+
+% -- Inititial formulation:
 %constraint forall(c in 1..len-1)
 %                 (temp[dish[c]] = hot -> 
 %                  forall(c1 in c+1..len)
 %                        (temp[dish[c1]] = cold -> 
 %                         exists(c2 in c+1..c1-1)(temp[dish[c2]] = warm)));
-constraint regular([temp[dish[c]] | c in COURSE], 3, card(TEMP), e, 2, 1..3);
-array[1..3,TEMP] of 0..3: e =
-     [| 1,0,3
-      | 1,2,3
-      | 1,2,3 |];
+
+% -- Formulation using regular:
+% constraint regular([temp[dish[c]] | c in COURSE], 3, card(TEMP), e, 2, 1..3);
+% array[1..3,TEMP] of 0..3: e =
+%      [| 1,0,3
+%       | 1,2,3
+%       | 1,2,3 |];
+
+% -- The best formulation:
+constraint forall(c in 1..len-1)(temp[dish[i]] = hot -> temp[dish[i+1]] != cold);
+% Note that this formulation is not mentioned in the video, but directly
+% follows from the automaton. This formulation is just as powerful as the
+% regular constraint, but is a lot simpler for the solver.
 
 
 % no more than two heavy dishes in a rows 
