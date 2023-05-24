@@ -14,22 +14,17 @@ array[int,1..2] of ELEMENTS: eCompat =
      Fire, Earth | Fire, Gold  | Gold, Water| Gold, Wood  | Earth, Water |];
      
 array[int,1..2] of int: esCompat = 
-  [| Summer, Wood | Autumn, Wood | Winter, Wood |
-     Wood, Summer | Wood, Autumn | Wood, Winter |
-     Spring, Fire | Autumn, Fire | Winter, Fire |
+  [| Wood, Summer | Wood, Autumn | Wood, Winter |
      Fire, Spring | Fire, Autumn | Fire, Winter |
-     Spring, Gold | Summer, Gold | Winter, Gold |
      Gold, Spring | Gold, Summer | Gold, Winter |
-     Spring, Water| Summer, Water| Autumn, Water|
      Water, Spring| Water, Summer| Water, Autumn|
-     Spring, Earth| Summer, Earth| Autumn, Earth| Winter, Earth|
      Earth, Spring| Earth, Summer| Earth, Autumn| Earth, Winter|]; 
      
 include "table.mzn";
 constraint forall(i in 1..(n div 2 - 1))(table([oHerbs[i],oHerbs[i+1]], eCompat));
 constraint forall(i in 1..(n div 2 - 1))(
 %     trace("table([oHerbs[\(i)],eHerbs[\(i)]], esCompat) and table([eHerbs[\(i)],oHerbs[\(i+1)]], esCompat)\n",
-     table([oHerbs[i],eHerbs[i]], esCompat) /\ table([eHerbs[i],oHerbs[i+1]], esCompat) );
+     table([oHerbs[i],eHerbs[i]], esCompat) /\ table([oHerbs[i+1],eHerbs[i]], esCompat) );
 
 
 constraint if n mod 2 = 0 then table([oHerbs[n div 2],eHerbs[n div 2]], esCompat) else true endif;
