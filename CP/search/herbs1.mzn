@@ -13,7 +13,7 @@ array[int,1..2] of ELEMENTS: eCompat =
   [| Water, Wood | Water, Fire | Wood, Fire | Wood, Earth | Earth, Gold  |
      Fire, Earth | Fire, Gold  | Gold, Water| Gold, Wood  | Earth, Water |];
      
-array[int,1..2] of (ELEMENTS union SEASONS): esCompat = 
+array[int,1..2] of int: esCompat = 
   [| Summer, Wood | Autumn, Wood | Winter, Wood |
      Wood, Summer | Wood, Autumn | Wood, Winter |
      Spring, Fire | Autumn, Fire | Winter, Fire |
